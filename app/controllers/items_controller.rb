@@ -44,6 +44,6 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
   end
 
   def item_params
-    params.require(:item).permit(:title, :description, :photo, :price, :console, :type, :user_id)
+    params.require(:item).permit(:title, :description, :photo, :price, :console, :type)
   end
 end
