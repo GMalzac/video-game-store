@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_booking
+  before_action :set_booking, only: [:show]
 
   def new
     @item = Item.find(params[:item_id])
@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
+   
   end
 
   private
