@@ -6,7 +6,6 @@ tmp/*
 !tmp/.keep
 *.swp
 .DS_Store
-.yml
 public/assets
 public/packs
 public/packs-test
@@ -17,3 +16,5 @@ node_modules
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+/config/application.yml
