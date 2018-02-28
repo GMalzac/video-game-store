@@ -10,12 +10,15 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def new
     @item = Item.new
+    @user = current_user
   end
 
   def create
     @item = Item.new(item_params)
+    @user = current_user
+    @item.user = @user
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to items_path
     else
       render :new
     end
@@ -44,6 +47,6 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
   end
 
   def item_params
-    params.require(:item).permit(:title, :description, :photo, :price, :console, :type)
+    params.require(:item).permit(:title, :description, :photo, :price, :console, :category)
   end
 end

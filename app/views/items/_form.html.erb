@@ -11,10 +11,10 @@
     <%= f.input :price %>
   </div>
   <div class="form-inputs">
-    <%= f.input :console %>
+    <%= f.input :console, collection: ["Playstation", "Xbox", "Nindendo"] %>
   </div>
   <div class="form-inputs">
-    <%= f.input :type %>
+    <%= f.input :category, collection: ["Game", "Console", "Peripheral"] %>
   </div>
 
   <!-- copy the photo form from the file "photo" inside this folder, once you add cloudinary -->
