@@ -1,54 +1,21 @@
-<h1>Items for Rent</h1>
+
 
 <div class="container">
-  <div class="card-container">
-    <div class="row">
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">FIFA
+<h2>My items</h2>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  item.photo %>);">
+          <div class="card-category">$ <%= item.price %></div>
+          <div class="card-description">
+            <h2><%= item.title %></h2>
+            <p><%= item.description %>t</p>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          <a class="card-link" href="#" ></a>
         </div>
       </div>
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">Fifa 18- PS4
-        </div>
-      </div>
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">FIFA
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">Fifa 18- PS4
-        </div>
-      </div>
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">Fifa 18- PS4
-        </div>
-      </div>
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">Fifa 18- PS4
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">Fifa 18- PS4
-        </div>
-      </div>
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">Fifa 18- PS4
-        </div>
-      </div>
-      <div class = "col-xs-12 col-md-4">
-        <div class="card" style="background-image: url(https://cdn.images.dailystar.co.uk/dynamic/184/photos/791000/620x/FIFA-18-Title-Update-New-patch-ahead-of-PS4-and-Xbox-One-Ultimate-Team-FUT-TOTW-6-reveal-654964.jpg)">Fifa 18- PS4
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
-  <div class="map" style= "background-image: url(https://www.wired.com/wp-content/uploads/2016/11/GoogleMapTA.jpg)">
-
-  </div>
-
 </div>
+
