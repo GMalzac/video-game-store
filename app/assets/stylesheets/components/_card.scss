@@ -8,6 +8,7 @@
   color: white;
   position: relative;
   margin-bottom: 10px;
+
 }
 .card-user {
   position: absolute;
@@ -29,12 +30,12 @@
   left: 10px;
 }
 .card-description h2 {
-  font-size: 24px;
+  font-size: 32px;
 }
 .card-description p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
+  font-size: 24px;
+  opacity: 0.9;
+  font-weight: regular;
 }
 .card-link {
   position: absolute;
