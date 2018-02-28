@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Search", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Add an Item to Rent", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Search", items_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add an Item to Rent",new_item_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Dashboard", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
