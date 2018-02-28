@@ -1,6 +1,7 @@
 <div class="container" align="center">
   <h1>Profile</h1>
-  <ul>
+
+  <ul style="list-style: none;">
 
     <li class="spaceli"><%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %></li>
     <li class="spaceli">Username: <%= @user.username  %></li>
@@ -10,8 +11,6 @@
     <li class="spaceli">Email address: <%= @user.email %></li>
     <li class="spaceli">Address: <%= @user.address  %></li>
     <li class="spaceli">About me: <%= @user.description  %></li>
-
-
   </ul>
 
 </div>
