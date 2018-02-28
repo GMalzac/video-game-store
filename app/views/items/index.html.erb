@@ -1,7 +1,19 @@
+
+<div class="container">
 <h2>My items</h2>
-<ul>
-  <% @items.each do |item| %>
-    <li> <%= item.title %></li>
-    <li> <img src="<%= item.photo_url %>" alt=""></li>
-  <% end %>
-</ul>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  item.photo %>);">
+          <div class="card-category">$ <%= item.price %></div>
+          <div class="card-description">
+            <h2><%= item.title %></h2>
+            <p><%= item.description %>t</p>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  # mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
   # to do:
   # has_many :bookings
   validates :title, presence: true
