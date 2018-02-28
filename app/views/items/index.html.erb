@@ -2,5 +2,6 @@
 <ul>
   <% @items.each do |item| %>
     <li> <%= item.title %></li>
+    <li> <img src="<%= item.photo_url %>" alt=""></li>
   <% end %>
 </ul>
