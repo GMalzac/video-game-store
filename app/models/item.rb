@@ -15,4 +15,11 @@ class Item < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+    def self.perform_search(keyword)
+      if keyword.present?
+        then Item.search_by_title(keyword)
+      else Item.all
+      end
+    end
 end

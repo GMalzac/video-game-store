@@ -4,12 +4,12 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
   def index
 
     if params[:query].present?
-      sql_query = "items.title @@ :query"
-      @items = Item.where(sql_query, query: "%#{params[:query]}%")
+      # sql_query = "items.title @@ :query"
+      @items = Item.perform_search(params[:query])
     else
       @items = Item.all
     end
-    
+
     @Users = User.where.not(latitude: nil, longitude: nil)
 
     @markers = @Users.map do |user|
