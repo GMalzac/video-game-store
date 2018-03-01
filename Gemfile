@@ -11,6 +11,7 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem 'devise'
+gem 'faker'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

@@ -2,6 +2,15 @@
 
 <div class="container">
 <h2>All items</h2>
+
+<%= form_tag items_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an item"
+  %>
+<% end %>
+
   <div class="row">
     <% @items.each do |item| %>
       <div class="col-xs-12 col-sm-4">
@@ -12,7 +21,7 @@
             <p><%= item.description %>t</p>
           </div>
           <img class="card-user" src="<%= item.user.photo %>">
-          <a class="card-link" href="#" ></a>
+          <%= link_to " ",item_path(item), class:"card-link" %>
         </div>
       </div>
     <% end %>
