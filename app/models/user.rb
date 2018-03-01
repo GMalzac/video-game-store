@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   # will want to add a format check?
   validates :phone_number, presence: true
+  validates :address, presence: true
 
   mount_uploader :photo, PhotoUploader
 end
