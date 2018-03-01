@@ -8,4 +8,11 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :console, presence: true
   validates :category, presence: true
+
+  include PgSearch
+  pg_search_scope :search_by_title,
+    against: [ :title],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
