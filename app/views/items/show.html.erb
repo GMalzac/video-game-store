@@ -1,0 +1,28 @@
+<div class="container" align="center">
+  <h1>Item</h1>
+
+  <ul style="list-style: none;">
+
+
+    <li class="spaceli"><%= @item.title  %></li>
+    <li class="spaceli">Price per day: <%= @item.price  %></li>
+    <li class="spaceli">Description: <%= @item.description  %></li>
+    <li class="spaceli">Console: <%= @item.console %></li>
+
+
+  </ul>
+
+<h1>Item Owner details</h1>
+  <ul style="list-style: none;">
+    <li class="spaceli">Username: <%= @item.user.username  %></li>
+    <li class="spaceli">First name: <%= @item.user.first_name  %></li>
+    <li class="spaceli">Last name: <%= @item.user.last_name  %></li>
+    <li class="spaceli">Phone number: <%= @item.user.phone_number  %></li>
+    <li class="spaceli">Email address: <%= @item.user.email %></li>
+    <li class="spaceli">Address: <%= @item.user.address  %></li>
+    <li class="spaceli">About me: <%= @item.user.description  %></li>
+ </ul>
+
+  <div class="btn btn-warning">Book now</div>
+
+</div>
