@@ -9,7 +9,7 @@ require 'faker'
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
     phone_number: rand(999999..9999999),
-    address: "138 kinsland road",
+    address: ["138 kinsland road, London", "121 Winslow Road, Wingrave", "Brighton Pier, Brighton", "London Eye", "Buckingham Palace, London", "34 Marmion Road, London"].sample,
     description: Faker::HowIMetYourMother.quote,
     )
   user.save!
