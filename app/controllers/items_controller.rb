@@ -2,7 +2,12 @@ class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+     if params[:query].present?
+      sql_query = "items.title @@ :query"
+      @items = Item.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @items = Item.all
+    end
   end
 
   def show
