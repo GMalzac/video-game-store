@@ -21,7 +21,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
     end
   end
 
-  def show
+  def savehow
     @markers =
       [{
         lat: @item.user.latitude,
