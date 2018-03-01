@@ -12,10 +12,10 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
 
     @Users = User.where.not(latitude: nil, longitude: nil)
 
-    @markers = @Users.map do |user|
+    @markers = @items.map do |item|
       {
-        lat: user.latitude,
-        lng: user.longitude#,
+        lat: item.user.latitude,
+        lng: item.user.longitude#,
         # infoWindow: { content: render_to_string(partial: "/Users/map_box", locals: { user: user }) }
       }
     end
