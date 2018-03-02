@@ -37,15 +37,21 @@
   <div class="row">
     <% @items.each do |item| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  item.photo %>);">
-          <div class="card-category">$ <%= item.price %></div>
-          <div class="card-description">
-            <h2><%= item.title %></h2>
-            <p><%= item.description %></p>
-            <p><%= item.console %></p>
+
+        <div class="card">
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  item.photo %>);">
           </div>
-          <img class="card-user" src="<%= item.user.photo %>">
-          <%= link_to " ",item_path(item), class:"card-link" %>
+          <div class="card-description">
+            <img class="card-user" src="<%= item.user.photo %>">
+            <div class="card-category">£<%= item.price %>
+            </div>
+            <div class="card-info">
+              <h2><%= item.title %></h2>
+              <p><%= item.description %></p>
+              <p><%= item.console %></p>
+            </div>
+          </div>
+            <%= link_to " ",item_path(item), class:"card-link" %>
         </div>
       </div>
     <% end %>
