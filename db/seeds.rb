@@ -1,6 +1,6 @@
 require 'faker'
 
-5.times do
+10.times do
   user = User.new(
     email: Faker::Internet.email,
     password: 123456,
@@ -9,7 +9,7 @@ require 'faker'
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
     phone_number: rand(999999..9999999),
-    address: ["138 kinsland road, London", "121 Winslow Road, Wingrave", "Brighton Pier, Brighton", "London Eye", "Buckingham Palace, London", "34 Marmion Road, London"].sample,
+    address: ["138 kingsland road, London", "121 Winslow Road, Wingrave", "Brighton Pier, Brighton", "Windsor Castle", "350 Queens Quay W, Toronto", "Blantyre, Malawi", "34 Marmion Road, London"].sample,
     description: Faker::HowIMetYourMother.quote,
     )
   user.save!
@@ -17,7 +17,7 @@ end
 
 20.times do
   item = Item.new(
-  user_id: 1 + rand(5),
+  user_id: 1 + rand(9),
   title: Faker::App.name,
   description: Faker::HowIMetYourMother.catch_phrase,
   price: 1 + rand(50),
