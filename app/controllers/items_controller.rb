@@ -2,10 +2,27 @@ class ItemsController < ApplicationController
 before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    puts params
+    puts current_user
     if params[:query].present?
-      # sql_query = "items.title @@ :query"
       @items = Item.perform_search(params[:query])
+      final_arr = []
+      most_final_arr = []
+      if params[:console].present?
+        @consoles = Item.where(console: params[:console])
+        @items.each do |item|
+          if @consoles.include?(item)
+            final_arr << item
+          end
+        end
+        @users = User.near([current_user.latitude, current_user.longitude], params[:distance].to_i)
+        final_arr.each do |item|
+          if @users.include?(item.user)
+            most_final_arr << item
+          end
+        end
+        @items = most_final_arr
+      end
     else
       @items = Item.all
     end

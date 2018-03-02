@@ -9,7 +9,30 @@
     class: "form-control",
     placeholder: "Find an item"
   %>
+  <select name='console'>
+    <option value="">Console</option>
+    <option value="Playstation 4">Playstation 4</option>
+    <option value="Xbox One">Xbox One</option>
+    <option value="Nintendo Switch">Nintendo Switch</option>
+    <option value="Playstation 3">Playstation 3</option>
+    <option value="Xbox 360">Xbox 360</option>
+    <option value="Nintendo 3DS">Nintendo 3DS</option>
+    <option value="PC">PC</option>
+    <option value="PS Vita">PS Vita</option>
+  </select>
+
+  <select name='distance'>
+     <option value="">Distance</option>
+    <option value="1">Less than 1km</option>
+    <option value="3">Less than 3km</option>
+    <option value="5">Less than 5km</option>
+    <option value="30">Less than 30km</option>
+    <option value="100">Less than 100km</option>
+  </select>
+
+
 <% end %>
+
 
   <div class="row">
     <% @items.each do |item| %>
@@ -19,6 +42,7 @@
           <div class="card-description">
             <h2><%= item.title %></h2>
             <p><%= item.description %></p>
+            <p><%= item.console %></p>
           </div>
           <img class="card-user" src="<%= item.user.photo %>">
           <%= link_to " ",item_path(item), class:"card-link" %>
