@@ -3,19 +3,28 @@
 
   <div class="row">
     <% @bookings.each do |booking| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  booking.item.photo %>);">
-          <div class="card-category">$ <%= booking.item.price %></div>
-          <div class="card-description">
-            <h2><%= booking.item.title %></h2>
-            <p><%= booking.item.description %></p>
-            <p><%= booking.item.console %></p>
+<div class="col-xs-12 col-sm-4">
+
+        <div class="card">
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  booking.item.photo %>);">
           </div>
-          <img class="card-user" src="<%= booking.item.user.photo %>">
-          <%= link_to " ",item_path(booking.item_id), class:"card-link" %>
+          <div class="card-description">
+            <img class="card-user" src="<%= booking.item.user.photo %>">
+            <div class="card-category">£<%= booking.item.price %>
+            </div>
+            <div class="card-info">
+              <h2><%= booking.item.title %></h2>
+              <p><%= booking.item.description %></p>
+              <p><%= booking.item.console %></p>
+            </div>
+          </div>
+            <%= link_to " ",item_path(booking.item_id), class:"card-link" %>
         </div>
       </div>
     <% end %>
   </div>
 
 </div>
+
+
+
