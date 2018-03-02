@@ -28,6 +28,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
         lng: @item.user.longitude#,
         # infoWindow: { content: render_to_string(partial: "/Users/map_box", locals: { user: user }) }
       }]
+      @booking = Booking.new
    end
 
 

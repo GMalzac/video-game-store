@@ -1,31 +1,80 @@
 <div class="container">
-  <h1>Item</h1>
-  <ul style="list-style: none;">
-    <li class="spaceli"><%= @item.title  %></li>
-    <li class="spaceli">Price per day: <%= @item.price  %></li>
-    <li class="spaceli">Description: <%= @item.description  %></li>
-    <li class="spaceli">Console: <%= @item.console %></li>
-  </ul>
+  <h1><%= @item.title  %></h1>
 </div>
 
 <div class="container">
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <% if @item.photo.present? %>
+        <%= cl_image_tag @item.photo, width: 350 %>
+      <% else %>
+        <%= image_tag "default-item.png", width: 350 %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <h2>Item details</h2>
+      <ul style="list-style: none;">
+        <li class="spaceli">Price per day: <%= @item.price  %></li>
+        <li class="spaceli">Description: <%= @item.description  %></li>
+        <li class="spaceli">Console: <%= @item.console %></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <h2>Your booking</h2>
+      <%= simple_form_for [@item, @booking] do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :start_date, as: :date,required: true, autofocus: true, input_html: { id: "timepicker"} %>
+          <%= f.input :end_date, as: :date, required: true, autofocus: true %>
+        </div>
+        <div class="form-actions">
+        <%= f.button :submit, "Book!", class: "btn-success center-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-  <h1>Item Owner details</h1>
-  <ul style="list-style: none;">
-    <li class="spaceli">Username: <%= @item.user.username  %></li>
-    <li class="spaceli">First name: <%= @item.user.first_name  %></li>
-    <li class="spaceli">Last name: <%= @item.user.last_name  %></li>
-    <li class="spaceli">Phone number: <%= @item.user.phone_number  %></li>
-    <li class="spaceli">Email address: <%= @item.user.email %></li>
-    <li class="spaceli">Address: <%= @item.user.address  %></li>
-    <li class="spaceli">About me: <%= @item.user.description  %></li>
-  </ul>
-  <%= link_to "Book now!",new_item_booking_path(@item), class: "btn btn-warning" %>
+  <div class="row">
+    <h1></h1>
+    <h2 style="text-align: center">Item Owner details</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-1">
+      <% if @item.user.photo.present? %>
+        <%= cl_image_tag @item.user.photo, width: 100 %>
+      <% else %>
+        <%= image_tag "default-profile.png", width: 100 %>
+      <% end %>
+    </div>
+    <div class="col-xs-5"
+      style="display: flex, align: middle">
+      <h3><%= @item.user.username  %></h3>
+    </div>
+      <div class="col-xs-6"
+      style="display: flex, align-items: center">
+        <h3>Where can you meet <%= @item.user.username  %>?</h3>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <ul style="list-style: none;">
+        <li class="spaceli">First name: <%= @item.user.first_name  %></li>
+        <li class="spaceli">Last name: <%= @item.user.last_name  %></li>
+        <li class="spaceli">Phone number: <%= @item.user.phone_number  %></li>
+        <li class="spaceli">Email address: <%= @item.user.email %></li>
+        <li class="spaceli">Address: <%= @item.user.address  %></li>
+        <li class="spaceli">About me: <%= @item.user.description  %></li>
+      </ul>
+    </div>
+    <div class="col-xs-6">
+      <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
+    </div>
   </div>
 </div>
