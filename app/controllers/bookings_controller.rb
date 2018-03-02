@@ -1,17 +1,17 @@
 class BookingsController < ApplicationController
 
-  before_action :set_booking, only: [:show]
+  before_action :set_item
 
   def new
-    @item = Item.find(params[:item_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @booking.item = @item
+    @booking.user_id = current_user.id
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to items_path
     else
       render :new
     end
@@ -26,8 +26,8 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_booking
-    @booking = Booking.find(params[:booking_id])
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
   def booking_params

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h2>Your booking for <%= @item.title %></h2>
+
+      <%= simple_form_for [@item, @booking] do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :start_date, as: :date, required: true, autofocus: true %>
+          <%= f.input :end_date, as: :date, required: true, autofocus: true %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Book!" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

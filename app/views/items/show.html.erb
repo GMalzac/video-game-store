@@ -26,8 +26,6 @@
     <li class="spaceli">Address: <%= @item.user.address  %></li>
     <li class="spaceli">About me: <%= @item.user.description  %></li>
   </ul>
-
-  <div class="btn btn-warning">Book now</div>
-
-</div>
+  <%= link_to "Book now!",new_item_booking_path(@item), class: "btn btn-warning" %>
+  </div>
 </div>
