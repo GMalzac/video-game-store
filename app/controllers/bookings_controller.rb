@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.item = @item
     @booking.user_id = current_user.id
     if @booking.save
-      redirect_to items_path
+      redirect_to item_index_by_user_path
     else
       render :new
     end
