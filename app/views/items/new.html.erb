@@ -1,15 +1,18 @@
 <div class="container">
-  <h1>Create a new item for renting</h1>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h3>What are you going to rent next?</h3>
 
-  <% if @item.errors.any? %>
-    <ul>
-      <% @item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% if @item.errors.any? %>
+        <ul>
+          <% @item.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
 
-  <%= render 'form', item: @item %>
+      <%= render 'form', item: @item %>
 
-  <%= link_to 'Back', items_path %>
+    </div>
+  </div>
 </div>
