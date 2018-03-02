@@ -1,39 +1,54 @@
 .card {
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 175px;
+  height: 275px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
   color: white;
-  position: relative;
   margin-bottom: 10px;
 
+}
+
+.card-image{
+  position: relative;
+  height: 175px;
+  background-size: cover !important;
+  background-position: center;
 }
 .card-user {
   position: absolute;
   right: 10px;
-  top: 10px;
+  bottom: 10px;
   width: 40px;
   border-radius: 50%;
+}
+.card-description {
+  position: relative;
+  background-color: white;
+  height: 90px;
+  color: black;
+  display: flex;
+}
+
+.card-info{
+  position: absolute;
+  left: 10px;
+  flex: 1 0 auto;
+  line-height: 40%;
 }
 .card-category {
   position: absolute;
   top: 10px;
-  left: 10px;
-  font-size: 15px;
+  right: 20px;
+  font-size: 16px;
   text-transform: uppercase;
-}
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  flex: 0 0 40px;
 }
 .card-description h2 {
-  font-size: 24px;
+  font-size: 16px;
+  margin-top: 15px !important;
 }
 .card-description p {
-  font-size: 16px;
+  font-size: 12px;
   opacity: 0.9;
   font-weight: regular;
 }

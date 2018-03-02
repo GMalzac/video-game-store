@@ -1,3 +1,4 @@
+ <% items = [Item.all[-1], Item.all[-2], Item.all[-3]]%>
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(255, 93, 81, 0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://s4.thingpic.com/images/Xf/TrCtYh1zKfphdFXzWZZ2E8zU.jpeg');">
   <div class="banner-content">
     <h1>Blokbustr</h1>
@@ -5,57 +6,31 @@
     <a class="btn btn-danger btn-lg">View the stuff!</a>
   </div>
 </div>
-<div class="container">
-  <h3>Latest ads:</h3>
-</div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images-na.ssl-images-amazon.com/images/I/41POEv7ktCL.jpg');">
-        <div class="card-category">Console</div>
-        <div class="card-description">
-          <h2>XBOX 360</h2>
-          <p>Brand new Xbox with 4 pads</p>
+  <h3>Latest ads:</h3>
+
+
+<% items.each do |item| %>
+<div class="col-xs-12 col-sm-4">
+
+        <div class="card">
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  item.photo %>);">
+          </div>
+          <div class="card-description">
+            <img class="card-user" src="<%= item.user.photo %>">
+            <div class="card-category">£<%= item.price %>
+            </div>
+            <div class="card-info">
+              <h2><%= item.title %></h2>
+              <p><%= item.description %></p>
+              <p><%= item.console %></p>
+            </div>
+          </div>
+            <%= link_to " ",item_path(item), class:"card-link" %>
         </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://image.smythstoys.com/original/desktop/160987.jpg');">
-        <div class="card-category">PS4 Game</div>
-        <div class="card-description">
-          <h2>FIFA 18 PS4</h2>
-          <p>Arsene Wenger loves Sam</p>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images-na.ssl-images-amazon.com/images/I/81PlDbD2o8L._SL1500_.jpg');">
-        <div class="card-category">Xbox periph.</div>
-        <div class="card-description">
-          <h2>XBOX pad</h2>
-          <p>Wireless pad</p>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.ytimg.com/vi/tKlRN2YpxRE/maxresdefault.jpg');">
-        <div class="card-category">Switch Game</div>
-        <div class="card-description">
-          <h2>Mario Kart switch</h2>
-          <p>Best multi-player beergame!</p>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
-  </div>
+<% end %>
 </div>
 
 
